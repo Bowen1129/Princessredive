@@ -7,5 +7,6 @@ with open('D:\\shit\\原始数据.txt',encoding= 'utf-8') as origin_file:
     for line in origin_file.readlines():
         line=line.strip()
         # print(line)
-result=re.findall( '$ダメージ|$が',line)
-print(result)
+#匹配信息
+        if re.match('(.*が$)', line) or re.match('.*ダメージ$', line ) or re.match('.*に$', line ):
+            print(line.strip())
